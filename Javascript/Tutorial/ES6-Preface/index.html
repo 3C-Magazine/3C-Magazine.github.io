@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="CodeDeviation">
+    <title>ES6 Preface - CodeDeviation</title>
+    <meta name="author" content="Sebastian">
+    
+    
+    <meta name="description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ES6 Preface">
+<meta property="og:url" content="http://yoursite.com/Javascript/Tutorial/ES6-Preface/index.html">
+<meta property="og:site_name" content="CodeDeviation">
+<meta property="og:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+<meta property="og:updated_time" content="2015-08-22T18:12:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 Preface">
+<meta name="twitter:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+    
+        <meta rel="publisher" content="https://plus.google.com/115501094920612700000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/avatar.jpg"/>
+    
+    
+        <meta property="og:image" content="/Javascript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/Javascript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">CodeDeviation</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="/#search">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/avatar.jpg"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Sebastian</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/3C-Magazine" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/3cmagazine" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            ES6 Preface
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Aug 22 2015 14:47:51 GMT+0200">
+	
+		    Aug 22, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Tutorial/">Tutorial</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Hiya! And welcome to this <strong>weekly series</strong> about the <strong>upcoming new ES6 features!</strong> ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next few weeks. ES6 contains lots of features which will change the way you will write JavaScript in the future. In the next weeks we will pick one feature after another and have a deeper look inside, comparing it to ES5 and having some examples how to use them.<br><a id="more"></a><br>This series is more for the rookies and ABCdarians in JavaScript, as we will not cover the full mechanics behind, but having “simple and easy” examples, but will provide enough insights to fully use the power of ES6.<br><h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES_1-2-3-_-5-6,_what?"><span class="toc-text">ES 1..2..3.. ..5..6, what?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Features_of_3rd_and_5th_edition"><span class="toc-text">Features of 3rd and 5th edition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What´s_in_store_for_ES7?"><span class="toc-text">What´s in store for ES7?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Can_i_use_ES6_right_now?"><span class="toc-text">Can i use ES6 right now?</span></a></li></ol></p>
+<h2 id="ES_1-2-3-_-5-6,_what?">ES 1..2..3.. ..5..6, what?</h2><p>ES6 is an abbreviation for <strong>ECMAScript-262 Standard Edition 6</strong>. You maybe have seen others like <em>ECMAScript2015</em> or the <em>Codename “Harmony”</em>. Its a standardized core of the Javascript language developed by <a href="https://brendaneich.com/" target="_blank" rel="external">Brendan Eich</a> around 1995 while he was working for Netscape.<br>There have been 4 other Editions of JavaScript over the last 20 years, the last (ES5) being released 2009. You may ask <strong>why only 4</strong>, its ES6! Yep you´re right, but ES4 was dropped as too ambitious and finally the standard committee stopped working on it and agreed on the relatively modest ES5.</p>
+<p>What does ECMA international say about the development of JavaScript?</p>
+<blockquote>
+<p>ECMAScript usage has moved beyond simple scripting and it is now used for the full spectrum of programming tasks in many different environments and scales. <strong>As the usage of ECMAScript has expanded, so has the features and facilities it provides.</strong> ECMAScript is now a fully featured general propose programming language.</p>
+</blockquote>
+<h2 id="Features_of_3rd_and_5th_edition">Features of 3rd and 5th edition</h2><p>In the <strong>third edition of the Standard (ES3)</strong> powerful <code>regular expressions</code>, better <code>string handling,</code> new <code>control statements</code>, <code>try/catch exception handling</code> and several other features were introduced. It was published in 2002.</p>
+<p>In <strong>ES5 (2009)</strong> introduced the <strong>most substantial upgrade</strong> for this language.</p>
+<p>It introduced (or finally formally specified) among other things:</p>
+<ul>
+<li>Object.create()</li>
+<li>Object.defineProperty( obj, prop, desc )</li>
+<li>Object.keys( obj )</li>
+<li>Object.getOwnPropertyNames( obj )</li>
+<li>strict mode</li>
+<li>getters &amp; setters</li>
+<li>Array.map() .filter() .isArray etc.</li>
+<li>Function.prototype.bind ( thisArg )</li>
+</ul>
+<p>and they stated in their introduction</p>
+<blockquote>
+<p>ECMAScript is a vibrant language and the evolution of the language is not complete. Significant technical enhancement will continue with future editions of this specification.</p>
+</blockquote>
+<p>and they have kept their word. But…</p>
+<h2 id="What´s_in_store_for_ES7?">What´s in store for ES7?</h2><p>There are already proposals for the next edition of ECMAScript, even before ES6 was published. And a 2-year release cycle for the standard is proposed (after waiting 6 years after ES5, this is essential for the evolution of Javascript).</p>
+<p>On this <a href="https://github.com/tc39/ecma262" target="_blank" rel="external">Github-Page</a> you can have a first impression.</p>
+<p>Current proposals involve:</p>
+<ul>
+<li><a href="https://github.com/tc39/Array.prototype.includes/" target="_blank" rel="external">Array.prototype.includes( element )</a> returning true/false whether an array includes a certain element</li>
+<li><a href="http://arv.github.io/ecmascript-object-observe/" target="_blank" rel="external">Object.observe( obj, observer )</a> which allows for direct observation of changes to objects</li>
+<li><a href="https://docs.google.com/presentation/d/1MY9NHrHmL7ma7C8dyNXvmYNNGgVmmxXk8ZIiQtPlfH4/edit?usp=sharing" target="_blank" rel="external">SIMD (Single Instruction Multiple Data)</a> which will speedup 3D Graphics and Physics as well as Image/Video Processing</li>
+</ul>
+<h2 id="Can_i_use_ES6_right_now?">Can i use ES6 right now?</h2><p>As you can see on <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">Kangax compatibility table</a> lots but not all features are supported by only up-to-date browsers (Firefox excels here). But if you want to safely use almost all of ES6´ features we will discuss here, without having to twiddle too much with this table, you can make use of <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> or Google´s <a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a>-compiler.</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/ES6/">ES6</a> <a class="tag tag--primary tag--small t-link" href="/tags/Javascript/">Javascript</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Sebastian. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/avatar.jpg"/>
+        
+            <h4 id="about-card-name">Sebastian</h4>
+        
+            <h5 id="about-card-bio"><p>Javascript Enthusiast. Blog-Newbie. Nice Food and my Girlfriend.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>DiOmega GmbH</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Frankfurt/Main Germany
+            </h5>
+        
+    </div>
+</div>
+
+        <div id="cover" style="background-image:url('http://res.cloudinary.com/sebastian/image/upload/v1440257461/keyboard_cover_vv96sg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
