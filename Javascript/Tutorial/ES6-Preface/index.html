@@ -5,21 +5,24 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="CodeDeviation">
-    <title>ES6 Preface - CodeDeviation</title>
+    <meta name="generator" content="3c Magazine">
+    <title>ES6 Preface - 3c Magazine</title>
     <meta name="author" content="Sebastian">
+    
+        <link rel="icon" href="/assets/images/favicon_3c.png">
     
     
     <meta name="description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ES6 Preface">
-<meta property="og:url" content="http://yoursite.com/Javascript/Tutorial/ES6-Preface/index.html">
-<meta property="og:site_name" content="CodeDeviation">
+<meta property="og:url" content="http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/index.html">
+<meta property="og:site_name" content="3c Magazine">
 <meta property="og:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
-<meta property="og:updated_time" content="2015-08-22T18:12:55.000Z">
+<meta property="og:updated_time" content="2015-08-23T08:00:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 Preface">
 <meta name="twitter:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+<meta name="twitter:creator" content="@3cmagazine">
     
         <meta rel="publisher" content="https://plus.google.com/115501094920612700000"/>
     
@@ -29,7 +32,7 @@
     
     
         <meta property="og:image" content="/Javascript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/Javascript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
+        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
     
     
     
@@ -44,7 +47,7 @@
             <header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="/ ">CodeDeviation</a>
+        <a class="header-title-link" href="/ ">3c Magazine</a>
     </h1>
     
         
@@ -200,14 +203,14 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Hiya! And welcome to this <strong>weekly series</strong> about the <strong>upcoming new ES6 features!</strong> ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next few weeks. ES6 contains lots of features which will change the way you will write JavaScript in the future. In the next weeks we will pick one feature after another and have a deeper look inside, comparing it to ES5 and having some examples how to use them.<br><a id="more"></a><br>This series is more for the rookies and ABCdarians in JavaScript, as we will not cover the full mechanics behind, but having “simple and easy” examples, but will provide enough insights to fully use the power of ES6.<br><h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES_1-2-3-_-5-6,_what?"><span class="toc-text">ES 1..2..3.. ..5..6, what?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Features_of_3rd_and_5th_edition"><span class="toc-text">Features of 3rd and 5th edition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What´s_in_store_for_ES7?"><span class="toc-text">What´s in store for ES7?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Can_i_use_ES6_right_now?"><span class="toc-text">Can i use ES6 right now?</span></a></li></ol></p>
+            <p>Hiya! And welcome to this <strong>weekly series</strong> about the <strong>upcoming new ES6 features!</strong> ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next few weeks. ES6 contains lots of features which will change the way you will write JavaScript in the future. In the next weeks we will pick one feature after another and have a deeper look inside, comparing it to ES5 and having some examples how to use them.<br><a id="more"></a><br>This series is more for the rookies and ABCdarians in JavaScript, as we will not cover the full mechanics behind, having “simple and easy” examples, but will provide enough insights to fully use the power of ES6.<br><h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES_1-2-3-_-5-6,_what?"><span class="toc-text">ES 1..2..3.. ..5..6, what?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Features_of_3rd_and_5th_edition"><span class="toc-text">Features of 3rd and 5th edition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What´s_in_store_for_ES7?"><span class="toc-text">What´s in store for ES7?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Can_i_use_ES6_right_now?"><span class="toc-text">Can i use ES6 right now?</span></a></li></ol></p>
 <h2 id="ES_1-2-3-_-5-6,_what?">ES 1..2..3.. ..5..6, what?</h2><p>ES6 is an abbreviation for <strong>ECMAScript-262 Standard Edition 6</strong>. You maybe have seen others like <em>ECMAScript2015</em> or the <em>Codename “Harmony”</em>. Its a standardized core of the Javascript language developed by <a href="https://brendaneich.com/" target="_blank" rel="external">Brendan Eich</a> around 1995 while he was working for Netscape.<br>There have been 4 other Editions of JavaScript over the last 20 years, the last (ES5) being released 2009. You may ask <strong>why only 4</strong>, its ES6! Yep you´re right, but ES4 was dropped as too ambitious and finally the standard committee stopped working on it and agreed on the relatively modest ES5.</p>
 <p>What does ECMA international say about the development of JavaScript?</p>
 <blockquote>
 <p>ECMAScript usage has moved beyond simple scripting and it is now used for the full spectrum of programming tasks in many different environments and scales. <strong>As the usage of ECMAScript has expanded, so has the features and facilities it provides.</strong> ECMAScript is now a fully featured general propose programming language.</p>
 </blockquote>
 <h2 id="Features_of_3rd_and_5th_edition">Features of 3rd and 5th edition</h2><p>In the <strong>third edition of the Standard (ES3)</strong> powerful <code>regular expressions</code>, better <code>string handling,</code> new <code>control statements</code>, <code>try/catch exception handling</code> and several other features were introduced. It was published in 2002.</p>
-<p>In <strong>ES5 (2009)</strong> introduced the <strong>most substantial upgrade</strong> for this language.</p>
+<p><strong>ES5 (2009)</strong> introduced the <strong>most substantial upgrade</strong> for this language.</p>
 <p>It introduced (or finally formally specified) among other things:</p>
 <ul>
 <li>Object.create()</li>
@@ -223,8 +226,8 @@
 <blockquote>
 <p>ECMAScript is a vibrant language and the evolution of the language is not complete. Significant technical enhancement will continue with future editions of this specification.</p>
 </blockquote>
-<p>and they have kept their word. But…</p>
-<h2 id="What´s_in_store_for_ES7?">What´s in store for ES7?</h2><p>There are already proposals for the next edition of ECMAScript, even before ES6 was published. And a 2-year release cycle for the standard is proposed (after waiting 6 years after ES5, this is essential for the evolution of Javascript).</p>
+<p>and they have kept their word.</p>
+<h2 id="What´s_in_store_for_ES7?">What´s in store for ES7?</h2><p>There are already proposals for the next edition of ECMAScript, even before ES6 was published. And a 2-year release cycle for the standard is proposed (good news after waiting 6 years for ES5…).</p>
 <p>On this <a href="https://github.com/tc39/ecma262" target="_blank" rel="external">Github-Page</a> you can have a first impression.</p>
 <p>Current proposals involve:</p>
 <ul>
@@ -232,7 +235,7 @@
 <li><a href="http://arv.github.io/ecmascript-object-observe/" target="_blank" rel="external">Object.observe( obj, observer )</a> which allows for direct observation of changes to objects</li>
 <li><a href="https://docs.google.com/presentation/d/1MY9NHrHmL7ma7C8dyNXvmYNNGgVmmxXk8ZIiQtPlfH4/edit?usp=sharing" target="_blank" rel="external">SIMD (Single Instruction Multiple Data)</a> which will speedup 3D Graphics and Physics as well as Image/Video Processing</li>
 </ul>
-<h2 id="Can_i_use_ES6_right_now?">Can i use ES6 right now?</h2><p>As you can see on <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">Kangax compatibility table</a> lots but not all features are supported by only up-to-date browsers (Firefox excels here). But if you want to safely use almost all of ES6´ features we will discuss here, without having to twiddle too much with this table, you can make use of <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> or Google´s <a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a>-compiler.</p>
+<h2 id="Can_i_use_ES6_right_now?">Can i use ES6 right now?</h2><p>As you can see on <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">Kangax compatibility table</a> lots but not all features are supported by only up-to-date browsers (Firefox excels here). If you want to safely use almost all of ES6´ features, without having to twiddle too much with this table, you can make use of <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> or Google´s <a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a>-compiler.</p>
 
             
                 
@@ -277,17 +280,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -309,6 +312,10 @@
 </div>
 
 
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
         
     </div>
 </article>
@@ -352,17 +359,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -388,17 +395,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/Javascript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-Preface/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
@@ -443,6 +450,17 @@
     <!--SCRIPTS-->
 <script src="/assets/js/script.min.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = '3cmagazine';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
 
 
     <script type="text/javascript">
