@@ -15,10 +15,10 @@
     <meta name="description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ES6-let(s) use block scope">
-<meta property="og:url" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/index.html">
+<meta property="og:url" content="http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/index.html">
 <meta property="og:site_name" content="3c Magazine">
 <meta property="og:description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
-<meta property="og:updated_time" content="2015-08-30T08:55:48.000Z">
+<meta property="og:updated_time" content="2015-08-30T09:33:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-let(s) use block scope">
 <meta name="twitter:description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
@@ -31,8 +31,8 @@
         <meta property="og:image" content="/assets/images/avatar.jpg"/>
     
     
-        <meta property="og:image" content="/JavaScript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
+        <meta property="og:image" content="/Javascript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
     
     
     
@@ -205,7 +205,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>, <a class="category-link" href="/categories/JavaScript/Tutorial/">Tutorial</a>
+    <a class="category-link" href="/categories/Javascript/">Javascript</a>, <a class="category-link" href="/categories/Javascript/Tutorial/">Tutorial</a>
 
 
     
@@ -214,10 +214,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. <em>Let is the new var</em> is the motto for today. If you are proficient with scoping and hoisting in JavaScript you know why you want to use <code>let</code>. If you are unsure or just want to repeat what <strong><em>hoisting</em></strong> is, then first head to <a href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>.<br><a id="more"></a><br>Last week we had a short recapitulation of the history and the future versions of JavaScript, and how you can use ES6 right now. If you missed it, <a href="/JavaScript/Tutorial/ES6-Preface/" title="here">here</a> you can have a look.</p>
+            <p>Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. <em>Let is the new var</em> is the motto for today. If you are proficient with scoping and hoisting in JavaScript you know why you want to use <code>let</code>. If you are unsure or just want to repeat what <strong><em>hoisting</em></strong> is, then first head to <a href="/Javascript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>.<br><a id="more"></a><br>Last week we had a short recapitulation of the history and the future versions of JavaScript, and how you can use ES6 right now. If you missed it, <a href="/Javascript/Tutorial/ES6-Preface/" title="here">here</a> you can have a look.</p>
 <p>Now <strong>let</strong>´s dive into our first feature. Consider the following example:</p>
 <figure class="highlight javascript"><figcaption><span>using var</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logging</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">var</span> myVar = <span class="string">'I got reassigned'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);     <span class="comment">//output: I got reassigned</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);         <span class="comment">//output: I got reassigned</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We declared and assigned a variable <code>myVar</code> at the top of the function scope. Nothing special about this. Its the way you should declare variables and how the JavaScript engine is processing it (via hoisting), see <a href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>. Afterwards we use a simple if-statement to check if <code>myVar</code> is not <code>undefined</code>. Inside this block we assign a new value to <code>myVar</code> again using the declare &amp; assign approach and log it to the console. Outside of the if-block again we want to log this variable. Now, what will be printed to the console? I think you know already… its two times <strong>I got reassigned</strong>. Its because the <strong>scope</strong> of a <code>var</code> variable is the enclosing function here. So if the JavaScript engine processes this, <code>myVar</code> gets reassigned and the <code>console.log</code> outside of the if-block will return the new value.<br> Now <code>let</code>´s change the code and fix this:</p>
+<p>We declared and assigned a variable <code>myVar</code> at the top of the function scope. Nothing special about this. Its the way you should declare variables and how the JavaScript engine is processing it (via hoisting), see <a href="/Javascript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>. Afterwards we use a simple if-statement to check if <code>myVar</code> is not <code>undefined</code>. Inside this block we assign a new value to <code>myVar</code> again using the declare &amp; assign approach and log it to the console. Outside of the if-block again we want to log this variable. Now, what will be printed to the console? I think you know already… its two times <strong>I got reassigned</strong>. Its because the <strong>scope</strong> of a <code>var</code> variable is the enclosing function here. So if the JavaScript engine processes this, <code>myVar</code> gets reassigned and the <code>console.log</code> outside of the if-block will return the new value.<br> Now <code>let</code>´s change the code and fix this:</p>
 <figure class="highlight javascript"><figcaption><span>using let</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logging</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">let</span> myVar = <span class="string">'I live in block scope'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);     <span class="comment">//output: I live in block scope</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);         <span class="comment">//output: I got declared and assigned in function scope</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Tip: if u use e.g. <a href="https://repl.it/BDLc" target="_blank" rel="external">repl.it</a> and want to use this <code>let</code> feature, place a <code>&quot;use strict&quot;;</code> at the beginning and encapsulate the function as <a href="https://en.wikipedia.org/wiki/Immediately-invoked_function_expression" target="_blank" rel="external">IIEF</a> like <code>(function logging() {...})()</code>, so it gets immediately invoked. Nice side-effect is that it avoids hoisting to and polluting the global scope. </p>
 <figure class="highlight javascript"><figcaption><span>IIEF</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">"use strict"</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIEF</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">let</span> myVar = <span class="string">'I live in block scope'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
@@ -277,7 +277,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Javascript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -292,17 +292,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -356,7 +356,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Javascript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -371,17 +371,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -407,17 +407,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/Javascript/Tutorial/ES6-let-s-use-block-scope/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
