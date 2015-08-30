@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="3c Magazine">
+    <title>ES6-let(s) use block scope - 3c Magazine</title>
+    <meta name="author" content="Sebastian">
+    
+        <link rel="icon" href="/assets/images/favicon_3c.png">
+    
+    
+    <meta name="description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ES6-let(s) use block scope">
+<meta property="og:url" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/index.html">
+<meta property="og:site_name" content="3c Magazine">
+<meta property="og:description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
+<meta property="og:updated_time" content="2015-08-30T08:55:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6-let(s) use block scope">
+<meta name="twitter:description" content="Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. Let is the new var is the motto for today. If you are proficient with scoping and hoisting in JavaScrip">
+<meta name="twitter:creator" content="@3cmagazine">
+    
+        <meta rel="publisher" content="https://plus.google.com/115501094920612700000"/>
+    
+    
+    
+        <meta property="og:image" content="/assets/images/avatar.jpg"/>
+    
+    
+        <meta property="og:image" content="/JavaScript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-66649041-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">3c Magazine</a>
+    </h1>
+    
+        
+            <a  class="header-right-icon st-search-show-outputs"
+                href="/#search">
+        
+                <i class="fa fa-lg fa-search"></i>
+            </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/avatar.jpg"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Sebastian</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/3C-Magazine" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/3cmagazine" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            ES6-let(s) use block scope
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Aug 29 2015 10:35:28 GMT+0200">
+	
+		    Aug 29, 2015
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>, <a class="category-link" href="/categories/JavaScript/Tutorial/">Tutorial</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Welcome back to the ES6 series, this week on block scoping and a new way of declaring variables. <em>Let is the new var</em> is the motto for today. If you are proficient with scoping and hoisting in JavaScript you know why you want to use <code>let</code>. If you are unsure or just want to repeat what <strong><em>hoisting</em></strong> is, then first head to <a href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>.<br><a id="more"></a><br>Last week we had a short recapitulation of the history and the future versions of JavaScript, and how you can use ES6 right now. If you missed it, <a href="/JavaScript/Tutorial/ES6-Preface/" title="here">here</a> you can have a look.</p>
+<p>Now <strong>let</strong>´s dive into our first feature. Consider the following example:</p>
+<figure class="highlight javascript"><figcaption><span>using var</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logging</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">var</span> myVar = <span class="string">'I got reassigned'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);     <span class="comment">//output: I got reassigned</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);         <span class="comment">//output: I got reassigned</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We declared and assigned a variable <code>myVar</code> at the top of the function scope. Nothing special about this. Its the way you should declare variables and how the JavaScript engine is processing it (via hoisting), see <a href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" title="Hoisting in a nutshell">Hoisting in a nutshell</a>. Afterwards we use a simple if-statement to check if <code>myVar</code> is not <code>undefined</code>. Inside this block we assign a new value to <code>myVar</code> again using the declare &amp; assign approach and log it to the console. Outside of the if-block again we want to log this variable. Now, what will be printed to the console? I think you know already… its two times <strong>I got reassigned</strong>. Its because the <strong>scope</strong> of a <code>var</code> variable is the enclosing function here. So if the JavaScript engine processes this, <code>myVar</code> gets reassigned and the <code>console.log</code> outside of the if-block will return the new value.<br> Now <code>let</code>´s change the code and fix this:</p>
+<figure class="highlight javascript"><figcaption><span>using let</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logging</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">let</span> myVar = <span class="string">'I live in block scope'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);     <span class="comment">//output: I live in block scope</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);         <span class="comment">//output: I got declared and assigned in function scope</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Tip: if u use e.g. <a href="https://repl.it/BDLc" target="_blank" rel="external">repl.it</a> and want to use this <code>let</code> feature, place a <code>&quot;use strict&quot;;</code> at the beginning and encapsulate the function as <a href="https://en.wikipedia.org/wiki/Immediately-invoked_function_expression" target="_blank" rel="external">IIEF</a> like <code>(function logging() {...})()</code>, so it gets immediately invoked. Nice side-effect is that it avoids hoisting to and polluting the global scope. </p>
+<figure class="highlight javascript"><figcaption><span>IIEF</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">"use strict"</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIEF</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myVar = <span class="string">'I got declared and assigned in function scope'</span></span><br><span class="line">    <span class="keyword">if</span> (myVar) &#123;</span><br><span class="line">        <span class="keyword">let</span> myVar = <span class="string">'I live in block scope'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(myVar);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(myVar);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>Another problem with <code>var</code> is within <code>for-loops</code>. Look at this code snippet:</p>
+<figure class="highlight javascript"><figcaption><span>for-loop</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIEF</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> messages = [<span class="string">"0"</span>,<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>];</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; messages.length; i++) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(messages[i]);   <span class="comment">//output: undefined four times</span></span><br><span class="line">        &#125;, i * <span class="number">2000</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>The reason why this does not work as intended is, that at the time the first <code>setTimeout</code> prints something to the console, the variable <code>i</code> is already <strong>3</strong>. If you doubt, just place a <code>console.log(i);</code> at the beginning of the <code>for-loop</code>, like:</p>
+<figure class="highlight javascript"><figcaption><span>for-loop again</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIEF</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> messages = [<span class="string">"0"</span>,<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>];</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; messages.length; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'outside setTimeout:'</span>, i);</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'inside:'</span>, i);</span><br><span class="line">            <span class="built_in">console</span>.log(messages[i]);   <span class="comment">//output: undefined four times</span></span><br><span class="line">        &#125;, i * <span class="number">2000</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>The problem will be visible immediately. </p>
+<ul>
+<li>outside setTimeout:0</li>
+<li>outside setTimeout:1</li>
+<li>outside setTimeout:2</li>
+<li>outside setTimeout:3 </li>
+<li><strong>inside: 4</strong></li>
+<li>undefined</li>
+<li>undefined</li>
+<li>undefined</li>
+<li>undefined</li>
+</ul>
+<p><code>var i</code> as declaration is hoisted to the top scope of the function and by the time the first <code>setTimeout</code> is run, <code>i</code> is already 4 and therefor <code>messages[4]</code> is undefined. Before ES6 one could solve this using <code>forEach</code>, but now its as simple as replacing <strong>var</strong> with <strong>let</strong>. It will create a new binding of <code>myVar</code> each iteration. Just try it.</p>
+<h1 id="Take_home_message">Take home message</h1><h2 id="scopes">scopes</h2><ul>
+<li><code>let</code> is block-scoped not the scope of the enclosing function</li>
+<li>in <code>for-loops</code> a new binding of the <code>let</code> variable in each iteration is created</li>
+</ul>
+<h2 id="debugging">debugging</h2><ul>
+<li>using the <code>let</code> variable before its declaration ill throw an ReferenceError (its called the `temporal dead zone)</li>
+<li>redeclaring of a <code>let</code> variable will throw an error</li>
+</ul>
+<h1 id="Can_i_use_let_right_now?">Can i use <code>let</code> right now?</h1><p>As of almost all new features the most secure way of using it, is the <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> or Google´s <a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a>-transpiler. Or have a look for <code>let</code> at <a href="https://kangax.github.io/compat-table/es6/#let" target="_blank" rel="external">Knagax´ compatibility table</a>.</p>
+<p>So, have fun using ES6 today and see you next time, when we will discuss another feature of ES6, that will help you write less code much easier,namely <strong>Destructuring</strong>.</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/ES6/">ES6</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Sebastian. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/" data-tooltip="Hoisting in a nutshell">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-let-s-use-block-scope/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/avatar.jpg"/>
+        
+            <h4 id="about-card-name">Sebastian</h4>
+        
+            <h5 id="about-card-bio"><p>Javascript Enthusiast. Blog-Newbie. Nice Food and my Girlfriend.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>DiOmega GmbH</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Frankfurt/Main Germany
+            </h5>
+        
+    </div>
+</div>
+
+        <div id="cover" style="background-image:url('http://res.cloudinary.com/sebastian/image/upload/v1440257461/keyboard_cover_vv96sg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = '3cmagazine';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','PFZ72ArvyHyGZJ7JR_j6','2.0.0');
+    </script>
+
+
+</html>

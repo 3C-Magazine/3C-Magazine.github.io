@@ -6,22 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="3c Magazine">
-    <title>ES6 Preface - 3c Magazine</title>
+    <title>Hoisting in a nutshell - 3c Magazine</title>
     <meta name="author" content="Sebastian">
     
         <link rel="icon" href="/assets/images/favicon_3c.png">
     
     
-    <meta name="description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+    <meta name="description" content="We will cover the question what is hosting and how does it work in today´s  in a nutshell beginners lesson.">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ES6 Preface">
-<meta property="og:url" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/index.html">
+<meta property="og:title" content="Hoisting in a nutshell">
+<meta property="og:url" content="http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/index.html">
 <meta property="og:site_name" content="3c Magazine">
-<meta property="og:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
-<meta property="og:updated_time" content="2015-08-30T08:51:12.000Z">
+<meta property="og:description" content="We will cover the question what is hosting and how does it work in today´s  in a nutshell beginners lesson.">
+<meta property="og:updated_time" content="2015-08-29T09:33:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6 Preface">
-<meta name="twitter:description" content="Hiya! And welcome to this weekly series about the upcoming new ES6 features! ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next">
+<meta name="twitter:title" content="Hoisting in a nutshell">
+<meta name="twitter:description" content="We will cover the question what is hosting and how does it work in today´s  in a nutshell beginners lesson.">
 <meta name="twitter:creator" content="@3cmagazine">
     
         <meta rel="publisher" content="https://plus.google.com/115501094920612700000"/>
@@ -31,8 +31,8 @@
         <meta property="og:image" content="/assets/images/avatar.jpg"/>
     
     
-        <meta property="og:image" content="/JavaScript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/http://res.cloudinary.com/sebastian/image/upload/v1440257430/JS_wnplgl.png" />
+        <meta property="og:image" content="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/https://upload.wikimedia.org/wikipedia/commons/f/f6/Walnut.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/https://upload.wikimedia.org/wikipedia/commons/f/f6/Walnut.png" />
     
     
     
@@ -190,22 +190,22 @@
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-        <div class="post-header main-content-wrap text-center">
+        <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ES6 Preface
+            Hoisting in a nutshell
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Aug 22 2015 14:47:51 GMT+0200">
+    <time itemprop="datePublished" content="Sun Aug 23 2015 14:25:22 GMT+0200">
 	
-		    Aug 22, 2015
+		    Aug 23, 2015
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>, <a class="category-link" href="/categories/JavaScript/Tutorial/">Tutorial</a>
+    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>, <a class="category-link" href="/categories/JavaScript/in-a-nutshell/">in a nutshell</a>
 
 
     
@@ -214,40 +214,28 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Hiya! And welcome to this <strong>weekly series</strong> about the <strong>upcoming new ES6 features!</strong> ES6 is coming to your local browser and thats awesome news! Hopefully you agree, otherwise let me convince you in the next few weeks. ES6 contains lots of features which will change the way you will write JavaScript in the future. In the next weeks we will pick one feature after another and have a deeper look inside, comparing it to ES5 and having some examples how to use them.<br><a id="more"></a><br>This series is more for the rookies and ABCdarians in JavaScript, as we will not cover the full mechanics behind, having “simple and easy” examples, but will provide enough insights to fully use the power of ES6.<br><h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ES_1-2-3-_-5-6,_what?"><span class="toc-text">ES 1..2..3.. ..5..6, what?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Features_of_3rd_and_5th_edition"><span class="toc-text">Features of 3rd and 5th edition</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What´s_in_store_for_ES7?"><span class="toc-text">What´s in store for ES7?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Can_i_use_ES6_right_now?"><span class="toc-text">Can i use ES6 right now?</span></a></li></ol></p>
-<h1 id="ES_1-2-3-_-5-6,_what?">ES 1..2..3.. ..5..6, what?</h1><p>ES6 is an abbreviation for <strong>ECMAScript-262 Standard Edition 6</strong>. You maybe have seen others like <em>ECMAScript2015</em> or the <em>Codename “Harmony”</em>. Its a standardized core of the Javascript language developed by <a href="https://brendaneich.com/" target="_blank" rel="external">Brendan Eich</a> around 1995 while he was working for Netscape.<br>There have been 4 other Editions of JavaScript over the last 20 years, the last (ES5) being released 2009. You may ask <strong>why only 4</strong>, its ES6! Yep you´re right, but ES4 was dropped as too ambitious and finally the standard committee stopped working on it and agreed on the relatively modest ES5.</p>
-<p>What does ECMA international say about the development of JavaScript?</p>
-<blockquote>
-<p>ECMAScript usage has moved beyond simple scripting and it is now used for the full spectrum of programming tasks in many different environments and scales. <strong>As the usage of ECMAScript has expanded, so has the features and facilities it provides.</strong> ECMAScript is now a fully featured general propose programming language.</p>
-</blockquote>
-<h1 id="Features_of_3rd_and_5th_edition">Features of 3rd and 5th edition</h1><p>In the <strong>third edition of the Standard (ES3)</strong> powerful <code>regular expressions</code>, better <code>string handling,</code> new <code>control statements</code>, <code>try/catch exception handling</code> and several other features were introduced. It was published in 2002.</p>
-<p><strong>ES5 (2009)</strong> introduced the <strong>most substantial upgrade</strong> for this language.</p>
-<p>It introduced (or lets say finally formally specified) among other things:</p>
-<ul>
-<li>Object.create()</li>
-<li>Object.defineProperty( obj, prop, desc )</li>
-<li>Object.keys( obj )</li>
-<li>Object.getOwnPropertyNames( obj )</li>
-<li>strict mode</li>
-<li>getters &amp; setters</li>
-<li>Array.map() .filter() .isArray etc.</li>
-<li>Function.prototype.bind ( thisArg )</li>
+            <p>We will cover the question what is <strong>hosting</strong> and how does it work in today´s  <strong><em>in a nutshell</em></strong> beginners lesson.<br><a id="more"></a><br><h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The_Hoisting"><span class="toc-text">The Hoisting</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Variable_declaration_vs_definition"><span class="toc-text">Variable declaration vs definition</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Function_hoisting"><span class="toc-text">Function hoisting</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Take_home_message"><span class="toc-text">Take home message</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Best_practice"><span class="toc-text">Best practice</span></a></li></ol></p>
+<h1 id="The_Hoisting">The Hoisting</h1><p>Lets have a look at the following code:</p>
+<figure class="highlight javascript"><figcaption><span>normal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myVariable = <span class="string">'My variable gets alerted!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( myVariable );</span><br><span class="line"><span class="comment">// output: My variable gets alerted!</span></span><br></pre></td></tr></table></figure>
+<p>Try it in your favorite browser. Open the developer tool and paste both lines of code and confirm. (Important to know is that if you want to write multiple line commands you can use <code>Shit-Enter</code> to get into a new line.) What happens? Easy, in your console it outputs the value of <code>myVariable</code>, because the variable gets defined before its used.</p>
+<p>Other nice online tools to test this, if you dont want to use the browser, is <a href="https://repl.it/BDLc" target="_blank" rel="external">repl.it</a> or <a href="http://jsbin.com/" target="_blank" rel="external">JS Bin</a>.  </p>
+<p>Now, lets switch both lines and call <code>console.log</code> right before we declare and assign <code>myVariable</code>.</p>
+<figure class="highlight javascript"><figcaption><span>switched</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( myVariable );</span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="string">'My variable gets alerted!'</span>;</span><br><span class="line"><span class="comment">// output: undefined</span></span><br></pre></td></tr></table></figure>
+<p>It gets undefined, but there is still some hoisting going on. There is hoisting, but my variable is undefined, how?</p>
+<h1 id="Variable_declaration_vs_definition">Variable declaration vs definition</h1><p>We have to define two things to understand:</p>
+<figure class="highlight javascript"><figcaption><span>Variable Declaration vs Definition</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myVariable;         <span class="comment">//declaration of myVariable</span></span><br><span class="line">myVariable = <span class="string">'xyz'</span>;     <span class="comment">//assignment/definition of myVariable</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myVariable = <span class="string">'xyz'</span>  <span class="comment">//both, declaration and assigment</span></span><br></pre></td></tr></table></figure>
+<p>In your eyes this looks like one statement, but the engine of JavaScript treats it as two, namely the declaration <code>var myVariable</code> and the assignment <code>myVariable = &#39;xyz&#39;</code>. The declaration gets hoisted, but the assignment is still in place, thats why the variable is <code>undefined</code>.</p>
+<h1 id="Function_hoisting">Function hoisting</h1><p>The same principle applies to functions:</p>
+<figure class="highlight javascript"><figcaption><span>Function Declaration vs Expression</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;...&#125;         <span class="comment">// a function declaration (gets hoisted completely)</span></span><br><span class="line"><span class="keyword">var</span> myFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;   <span class="comment">// a function expression</span></span><br></pre></td></tr></table></figure>
+<p>That means the whole function body gets moved to the top and allows to call a function before it gets declared:</p>
+<figure class="highlight javascript"><figcaption><span>Function Hoisting</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hoistIt();                          <span class="comment">//output: This function declaration gets hoisted.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hoistIt</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This function declaration gets hoisted.'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hoistIt = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This function expression does not get hoisted.'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Take_home_message">Take home message</h1><ul>
+<li>Declarations, variables and functions, are always hoisted to the top (of the scope) before execution</li>
+<li>Definitions (variable) and expressions (function) stay in place</li>
 </ul>
-<p>and they stated in their introduction</p>
-<blockquote>
-<p>ECMAScript is a vibrant language and the evolution of the language is not complete. Significant technical enhancement will continue with future editions of this specification.</p>
-</blockquote>
-<p>and they have kept their word.</p>
-<h1 id="What´s_in_store_for_ES7?">What´s in store for ES7?</h1><p>There are already proposals for the next edition of ECMAScript, even before ES6 was published. And a 2-year release cycle for the standard is proposed (good news after waiting 6 years for ES5…).</p>
-<p>On this <a href="https://github.com/tc39/ecma262" target="_blank" rel="external">Github-Page</a> you can have a first impression.</p>
-<p>Current proposals involve:</p>
-<ul>
-<li><a href="https://github.com/tc39/Array.prototype.includes/" target="_blank" rel="external">Array.prototype.includes( element )</a> returning true/false whether an array includes a certain element</li>
-<li><a href="http://arv.github.io/ecmascript-object-observe/" target="_blank" rel="external">Object.observe( obj, observer )</a> which allows for direct observation of changes to objects</li>
-<li><a href="https://docs.google.com/presentation/d/1MY9NHrHmL7ma7C8dyNXvmYNNGgVmmxXk8ZIiQtPlfH4/edit?usp=sharing" target="_blank" rel="external">SIMD (Single Instruction Multiple Data)</a> which will speedup 3D Graphics and Physics as well as Image/Video Processing</li>
-</ul>
-<h1 id="Can_i_use_ES6_right_now?">Can i use ES6 right now?</h1><p>As you can see on <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">Kangax´ compatibility table</a> lots but not all features are supported by only up-to-date browsers (Firefox excels here). If you want to safely use almost all of ES6´ features, without having to twiddle too much with this table, you can make use of <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> or Google´s <a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a>-transpiler (translator and compiler).</p>
-
+<h1 id="Best_practice">Best practice</h1><p>for writing code therefore is:</p>
+<p>Manually declare variables at the beginning of the current scope (like e.g. functions), and declare functions before calling them, it resembles the default behavior of the JavaScript engine.</p>
+<figure class="highlight javascript"><figcaption><span>manual declaration in functions</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">manual</span>(<span class="params"> argument </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var1, </span><br><span class="line">        var2 = argument, </span><br><span class="line">        var3 = <span class="keyword">new</span> <span class="built_in">Array</span>(),</span><br><span class="line">        var4 = <span class="string">''</span>;</span><br><span class="line">    <span class="comment">//do some stuff</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">manual( argument );</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -259,7 +247,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/ES6/">ES6</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Fundamentals/">Fundamentals</a> <a class="tag tag--primary tag--small t-link" href="/tags/Hoisting/">Hoisting</a>
 
             </div>
         
@@ -268,7 +256,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/"  data-tooltip="Hoisting in a nutshell">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/Tutorial/ES6-let-s-use-block-scope/"  data-tooltip="ES6-let(s) use block scope">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -276,7 +264,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/Tutorial/ES6-Preface/" data-tooltip="ES6 Preface">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -291,17 +279,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -347,7 +335,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/"  data-tooltip="Hoisting in a nutshell">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/Tutorial/ES6-let-s-use-block-scope/"  data-tooltip="ES6-let(s) use block scope">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -355,7 +343,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/JavaScript/Tutorial/ES6-Preface/" data-tooltip="ES6 Preface">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -370,17 +358,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -406,17 +394,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/Tutorial/ES6-Preface/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://3c-magazine.github.io/JavaScript/in-a-nutshell/Hoisting-in-a-nutshell/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
